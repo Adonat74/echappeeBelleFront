@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 30 30"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="google-plus-g.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   width="30"
+   height="30"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.0029297"
+     inkscape:cx="157.53846"
+     inkscape:cy="198.41869"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <rect
+     style="fill:#525252;fill-opacity:1;stroke-width:0.0374999"
+     id="rect843"
+     width="30"
+     height="30"
+     x="0"
+     y="0" />
+  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+  <path
+     d="m 17.707835,13.58955 c 0.0647,0.34207 0.11093,0.68414 0.11093,1.12786 0,3.87364 -2.59782,6.61934 -6.50837,6.61934 -3.7441397,0 -6.7764697,-3.03229 -6.7764697,-6.77647 0,-3.74417 3.03233,-6.7764699 6.7764697,-6.7764699 1.83049,0 3.35587,0.66561 4.53921,1.77501 l -1.83974,1.7657699 c -0.49924,-0.48074 -1.37746,-1.04467 -2.69947,-1.04467 -2.3111997,0 -4.1971797,1.91368 -4.1971797,4.28036 0,2.36669 1.88598,4.28037 4.1971797,4.28037 2.68097,0 3.68869,-1.93218 3.84582,-2.9214 h -3.84582 v -2.32973 h 6.39744 z m 6.54375,0.22719 v -1.96705 h -1.97651 v 1.96705 h -1.96705 v 1.97651 h 1.96705 v 1.96704 h 1.97651 v -1.96704 h 1.96704 v -1.97651 z"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:0.0352942" />
+</svg>
