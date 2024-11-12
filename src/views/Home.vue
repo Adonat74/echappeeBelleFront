@@ -11,7 +11,5 @@ import { ref } from 'vue'
 </template>
 
 <style scoped>
-.read-the-docs {
-  color: #888;
-}
+
 </style>

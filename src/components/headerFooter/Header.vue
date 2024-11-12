@@ -1,9 +1,18 @@
 <script setup>
-
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-<h3>Je suis le header</h3>
+  <header>
+    <h3>Je suis le header</h3>
+    <nav>
+      <RouterLink to="/">Accueil</RouterLink>
+      <RouterLink to="/renting">Location</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+    </nav>
+  </header>
+
+
 </template>
 
 <style scoped>

@@ -1,12 +1,15 @@
 <script setup>
-import HelloWorld from './views/Home.vue'
 import Header from "./components/headerFooter/Header.vue";
 import Footer from "./components/headerFooter/Footer.vue";
+import { RouterView } from 'vue-router'
+
 </script>
 
 <template>
   <Header />
-  <HelloWorld />
+  <main>
+    <RouterView />
+  </main>
   <Footer />
 </template>
 

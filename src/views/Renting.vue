@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <h1>renting page</h1>
 
 </template>
 
