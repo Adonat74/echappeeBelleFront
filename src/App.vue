@@ -16,6 +16,6 @@ import { RouterView } from 'vue-router'
 <style scoped>
 main{
   position: relative;
-  top: 100px;
+  top: -55px;
 }
 </style>

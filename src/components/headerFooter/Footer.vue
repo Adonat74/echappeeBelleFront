@@ -16,7 +16,7 @@
       <section>
         <h4>NEWSLETTER</h4>
         <div class="inputContainer">
-          <input type="email">
+          <input placeholder="Entrez votre e-mail" type="email">
           <img class="emailIcon" src="@/assets/logo-réseaux-sociaux/boutton-submit-footer.svg" alt="icon newsletter">
         </div>
         <p>Inscrivez-vous pour recevoir les
