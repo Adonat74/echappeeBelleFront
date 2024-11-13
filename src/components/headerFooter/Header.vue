@@ -12,7 +12,7 @@ import { RouterLink } from 'vue-router'
       </div>
       <div class="flexRow">
         <img src="@/assets/images/icon-telephone.png" alt="telephone icon">
-        <p><span style="color: var(--orange)">TÉLÉPHONE :</span><br>01 23 45 67 89</p>
+        <p><span style="color: var(--orange)">TÉLÉPHONE :</span><br><span style="font-size: 1.5rem">01 23 45 67 89</span></p>
       </div>
       <div>
         <p><span style="color: var(--orange)">OUVERTURE :</span> Du Lundi au Samedi</p>
