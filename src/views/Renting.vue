@@ -14,6 +14,18 @@ onMounted(async () => {
   console.log(vehicles.value);
 });
 
+function sortVehicles(sortBy) {
+  if (sortBy == "priceIncrease") {
+    vehicles.value.sort((a,b) => a.pricePerKilometerInCents - b.pricePerKilometerInCents);
+  } else if (sortBy == "priceDecrease") {
+    vehicles.value.sort((a,b) => b.pricePerKilometerInCents - a.pricePerKilometerInCents);
+  } else if (sortBy == "brandAZ") {
+    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? 1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? -1 : 0))
+  } else if (sortBy == "brandZA") {
+    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? -1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? 1 : 0))
+  }
+}
+
 
 
 </script>
@@ -27,7 +39,7 @@ onMounted(async () => {
     <section>
       <div>
         <label for="sort">TRIER PAR : </label>
-        <select name="sort" id="sort">
+        <select name="sort" id="sort" @change="sortVehicles($event.target.value)">
           <option value="priceIncrease">Prix : Croissant</option>
           <option value="priceDecrease">Prix : Décroissant</option>
           <option value="brandAZ">marque : A-Z</option>
