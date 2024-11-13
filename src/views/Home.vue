@@ -1,11 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue';
+import { getVehicles } from "@/services/modules/vehiclesAPICalls.js";
 
+const vehicles = ref([]);
+
+onMounted(async () => {
+  const result = await getVehicles();
+  if (result) {
+    vehicles.value = result;
+  }
+  console.log(vehicles.value);
+});
 
 </script>
 
 <template>
-  <section id="pageContent">
+
     <div id="container1">
       <div class="titre">
         <img id="imageBackground" src="../assets/images/vehicule1.jpg" alt="photo voiture">
@@ -67,80 +77,13 @@ import { ref } from 'vue'
     <div class="container4">
             <h2>VEHICULES RECENTS</h2>
         <div class="allVehicle">
-          <div class="choiceVehicle">
+          <div class="choiceVehicle" v-for = "(vehicle, index) in vehicles.slice(0,3)" :key="index">
                     <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-                          <h3 class="titleAcceuil">BMW 535I, NAVI, LEATHER, ABS</h3>
-                          <a class="hrefButton" href="#">
-                            <button class="priceButtonAcceuil">5 500&euro;</button>
-                          </a>
-          </div>
-
-          <div class="choiceVehicle">
-                <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-                        <h3 class="titleAcceuil">BMW 328i, SPORT LINE BODY KIT</h3>
-                        <a class="hrefButton" href="#">
-                          <button class="priceButtonAcceuil">8 000&euro;</button>
-                        </a>
-          </div>
-            <div class="choiceVehicle">
-                    <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-                          <h3 class="titleAcceuil">FORD EXPLORER 2015 4WD</h3>
-                          <a class="hrefButton" href="#">
-                            <button id="priceButtonAcceuil" class="priceButtonAcceuil">
-                              8 200&euro;</button>
-                          </a>
-            </div>
-        </div>
-    </div><!--Ici se termine le #container4-->
-    <div id="container5">
-      <h2>Pourquoi nous choisir?</h2>
-      <div id="container5Grid">
-        <div class="pourquoiChoisir">
-          <img class="container5Image" src="../assets/images/icon1.png" alt="etiquette">
-          <div class="container5Text">
-            <h4>FINANCEMENT</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus hic tempora vitae iusto velit alias fugit tenetur! Quidem neque maiores magnam odit voluptas suscipit earum</p>
+                          <h3 class="titleAcceuil">{{vehicle.brand}} {{vehicle.model}}<br>{{vehicle.plateNumber}}<br>Taxes Horses {{vehicle.taxHorses}}</h3>
+                          <a class="hrefButton" href="#"><button class="priceButtonAcceuil">{{(vehicle.pricePerKilometerInCents/100).toFixed(2)}}€/km</button></a>
           </div>
         </div>
-        <div class="pourquoiChoisir">
-          <img class="container5Image" src="../assets/images/icon2.png" alt="curseur">
-          <div class="container5Text">
-            <h4>RÉACTIVITÉ DE<br>
-              L'ÉQUIPE TECHNIQUE</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus hic tempora vitae iusto velit alias fugit tenetur! Quidem neque maiores magnam odit voluptas suscipit earu</p>
-          </div>
-        </div>
-        <div class="pourquoiChoisir">
-          <img class="container5Image" src="../assets/images/icon3.png" alt="bulle">
-          <div class="container5Text">
-            <h4>A L'ÉCOUTE DE NOTRE<br>
-              CLIENTÈLE</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus hic tempora vitae iusto velit alias fugit tenetur! Quidem neque maiores magnam odit voluptas suscipit earum</p>
-          </div>
-        </div>
-        <div class="pourquoiChoisir">
-          <img class="container5Image" src="../assets/images/icon4.png" alt="calepin">
-          <div class="container5Text">
-            <h4>SERVICE &amp;<br>
-              MAINTENANCE</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus hic tempora vitae iusto velit alias fugit tenetur! Quidem neque maiores magnam odit voluptas suscipit earum</p>
-          </div>
-        </div>
-      </div>
-      <a id="hrefButtonContact" href="#"><button id="buttonContact">CONTACTEZ NOUS</button></a>
-    </div><!--Ici se termine le #container5-->
-    <div id="container6">
-      <div id="text7Container">
-        <div id="text7">
-          <h4>CLUB AUTO<br>
-            <span style="color: #FFFFFF; ">VENTE ET LOCATION</span></h4>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium animi nostrum labore eos ut, magnam similique. Veritatis itaque officiis aliquam, repudiandae optio quidem tenetur! Natus nisi eos vitae! Labore, autem.</p>
-        </div>
-      </div>
-    </div><!--Ici se termine le #container6-->
-  </section><!--Ici se termine le #pagecontent-->
-
-
+    </div>
 </template>
 
 <style scoped>
@@ -258,12 +201,12 @@ background-color: hsla(0, 100%, 64%, 0.82);
   justify-content: space-evenly;
 }
 .textBlock{
-  height: 80vh;
+  height: 90vh;
 }
 
 .container4{
   background-color: #232628;
-  height: 72vh;
+  height: 90vh;
 }
 .container4 h2{
   text-align: center;
@@ -275,6 +218,8 @@ background-color: hsla(0, 100%, 64%, 0.82);
 .allVehicle{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+
 }
 .choiceVehicle{
   display: flex;
@@ -284,11 +229,13 @@ background-color: hsla(0, 100%, 64%, 0.82);
   color: white;
 }
 .choiceVehicle button{
-  width: 15%;
+  width: 20%;
   font-size: 0.7em;
-
 }
+
 .choiceVehicle img{
   width: 90%;
+  margin-left: 5%;
 }
+
 </style>
