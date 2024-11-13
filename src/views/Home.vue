@@ -86,8 +86,8 @@ import { ref } from 'vue'
                     <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
                           <h3 class="titleAcceuil">FORD EXPLORER 2015 4WD</h3>
                           <a class="hrefButton" href="#">
-                            <button id="priceButtonAcceuil" class="priceButtonAcceuil"><span
-                                style="color: #000000; ">9 000&euro;</span><br>8 200&euro;</button>
+                            <button id="priceButtonAcceuil" class="priceButtonAcceuil">
+                              8 200&euro;</button>
                           </a>
             </div>
         </div>
@@ -263,7 +263,7 @@ background-color: hsla(0, 100%, 64%, 0.82);
 
 .container4{
   background-color: #232628;
-  height: 70vh;
+  height: 72vh;
 }
 .container4 h2{
   text-align: center;
