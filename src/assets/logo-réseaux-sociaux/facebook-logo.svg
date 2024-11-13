@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="30mm"
+   height="30mm"
+   viewBox="0 0 30 30"
+   version="1.1"
+   id="svg4630"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="facebook logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4632"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.914906"
+     inkscape:cx="288.55423"
+     inkscape:cy="320.25148"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4627" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-28.640869,-63.633072)">
+    <circle
+       style="fill:#525252;fill-opacity:1;stroke-width:0.06"
+       id="path166"
+       cx="43.640869"
+       cy="78.633072"
+       r="15" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.026439"
+       d="m 41.341996,84.035898 v -4.19059 h -1.520245 -1.520245 v -1.731756 -1.731758 h 1.516979 1.51698 l 0.01419,-1.606172 c 0.01459,-1.651696 0.0243,-1.819224 0.137599,-2.372904 0.0579,-0.28295 0.226791,-0.785892 0.357773,-1.0654 0.155876,-0.33263 0.420865,-0.714476 0.694344,-1.000541 0.697204,-0.729287 1.630792,-1.14453 2.821362,-1.254889 0.385296,-0.03571 1.174406,-0.01744 1.824294,0.04224 0.430132,0.0395 1.199434,0.132692 1.315342,0.159333 l 0.05949,0.01367 v 1.464901 1.464901 l -0.998072,0.01024 c -0.916588,0.0094 -1.014556,0.01482 -1.199954,0.06621 -0.594652,0.164824 -0.985508,0.530538 -1.179906,1.104008 l -0.0717,0.211512 -0.0082,1.38144 -0.0082,1.38144 h 1.65375 c 1.30464,0 1.65404,0.007 1.655126,0.03305 8e-4,0.01818 -0.115244,0.797456 -0.25778,1.731734 l -0.259158,1.698686 -1.39466,2.2e-5 -1.39466,2.4e-5 v 4.190588 4.19059 h -1.877174 -1.877173 z"
+       id="path1487" />
+  </g>
+</svg>

@@ -7,7 +7,7 @@ import { ref } from 'vue'
 <template>
   <section id="pageContent">
     <div id="container1">
-      <div class="text1">
+      <div class="titre">
         <img id="imageBackground" src="../assets/images/vehicule1.jpg" alt="photo voiture">
         <h2>ECHAPEE BELLE LE MEILLEUR DE L'AUTOMOBILE</h2>
       </div>
@@ -23,8 +23,10 @@ import { ref } from 'vue'
           </div>
         </div>
 
-      <div id="text3">
-            <h2 id="h2Text3">LE MEILLEUR DE L'AUTOMOBILE</h2>
+      <div class="text3">
+
+        <div class="column3">
+            <h2 class="h2Text3">LE MEILLEUR DE L'AUTOMOBILE</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae corporis amet, omnis iure culpa facere rem tempora hic? Ad quisquam suscipit non perspiciatis hic natus ea aut doloribus alias sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime veritatis labore dolor dolore pariatur repellat autem ea hic maiores inventore distinctio id accusantium nostrum minima nobis saepe, qui est eaque!</p>
             <ul class="bold" id="ulCheck">
               <li>Lorem ipsum dolor sit amet</li>
@@ -33,24 +35,35 @@ import { ref } from 'vue'
               <li>Lorem ipsum dolor sit amet</li>
               <li>Lorem ipsum dolor sit amet</li>
             </ul>
-        </div>
-        <div id="image3">
-          <img src="../assets/images/entretien.jpg" alt="votre voiture est bien entretenue">
-        </div>
 
-    </div><!--Ici se termine le #container2-->
-    <div class="bold" id="container3">
-      <div id="container3Flex">
-        <div id="text4" class="textBlock">
-          <h2>Vous souhaitez louer?</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique omnis eveniet magnam excepturi quibusdam iste ducimus a dolores? Exercitationem est rem sit corporis ratione, delectus quisquam maiores facere praesentium porro!</p>
         </div>
-        <div id="text5" class="textBlock">
-          <h2>Vous souhaitez acheter?</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique omnis eveniet magnam excepturi quibusdam iste ducimus a dolores? Exercitationem est rem sit corporis ratione, delectus quisquam maiores facere praesentium porro!</p>
-        </div>
+          <div class="image3">
+            <img src="../assets/images/entretien.jpg" alt="votre voiture est bien entretenue">
+          </div>
       </div>
+    </div><!--Ici se termine le #container2-->
+
+    <div class="locationChoice">
+          <div class="container3Flex">
+                  <div class="textBlock">
+                      <img src="../assets/images/vente-location.jpg" alt="Nos clients sont satisfaits">
+                      <div class="placementText">
+
+                                 <div class="locationChoicetext1">
+                                    <h2>Vous souhaitez louer?</h2>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique omnis eveniet magnam excepturi quibusdam
+                                      iste ducimus a dolores? Exercitationem est rem sit corporis ratione, delectus quisquam maiores facere praesentium porro!</p>
+                                  </div>
+
+                                  <div class="locationChoicetext2">
+                                    <h2>Vous souhaitez acheter?</h2>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique omnis eveniet magnam excepturi quibusdam iste ducimus a dolores? Exercitationem est rem sit corporis ratione, delectus quisquam maiores facere praesentium porro!</p>
+                                </div>
+                      </div>
+                  </div>
+          </div>
     </div><!--Ici se termine le #container3-->
+
     <div id="container4">
       <h2>VEHICULES RECENTS</h2>
       <div id="cardContainerAcceuil">
@@ -148,7 +161,7 @@ import { ref } from 'vue'
   height: 50vh;
   object-fit: cover;
 }
-.text1 h2{
+.titre h2{
   text-align: center;
   position: relative;
   top: -10px;
@@ -168,12 +181,94 @@ import { ref } from 'vue'
 .image2 img{
   width: 25%;
   margin-left: 5%;
+  object-fit: cover;
 }
-.text1{
+.titre{
   margin-top: 2%;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+.text1{
+  width: 50%;
+  padding: 5%;
+  text-align: center;
+  margin: auto;
+}
+.text1 h2{
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+.text1 h3{
+  margin-bottom: 5%;
+}
+.text3{
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  text-align: center;
+  margin: auto;
+}
+.text3 h2{
+  font-size: 2em;
+  margin-bottom: 5%;
+}
+.text3 p{
+  margin-bottom: 5%;
+}
+.image3 img{
+  width: 90%;
+  object-fit: cover;
+}
+.column3{
+  display: flex;
+  flex-direction: column;
+}
+.locationChoice img{
+  object-fit: cover;
+  width: 100%;
+  height: 80vh;
+}
 
+.locationChoicetext1{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 4%;
+  background-color:hsla(39, 95%, 60%, 0.82);;
+}
+.locationChoicetext1 h2{
+  font-size: 2em;
+  margin-bottom: 1%;
+}
+.locationChoicetext1 p{
+  font-size: 1em;
+  color:white;
+}
+.locationChoicetext2{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 4%;
+background-color: hsla(0, 100%, 64%, 0.82);
+}
+
+.locationChoicetext2 h2{
+  font-size: 2em;
+  margin-bottom: 1%;
+}
+.locationChoicetext2 p{
+  font-size: 1em;
+  color:white;
+}
+.placementText{
+  position: relative;
+  top: -550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.textBlock{
+  height: 80vh;
+}
 </style>

@@ -14,5 +14,8 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-
+main{
+  position: relative;
+  top: 100px;
+}
 </style>
