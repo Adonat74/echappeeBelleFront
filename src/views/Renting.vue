@@ -1,4 +1,8 @@
 <script setup>
+import VehiclesFilter from "@/components/filter/VehiclesFilter.vue";
+import CarCard from "@/components/carCard/CarCard.vue";
+
+
 
 </script>
 
@@ -11,24 +15,22 @@
   <div>
     <section>
       <div>
-
+        <label for="sort"></label>
+        <select name="sort" id="sort">
+          <option value="priceIncrease">Prix : Croissant</option>
+          <option value="priceDecrease">Prix : Décroissant</option>
+          <option value="brandAZ">marque : A-Z</option>
+          <option value="brandZA">marque : Z-A</option>
+        </select>
+      </div>
+      <div class="carList">
+        <CarCard/>
       </div>
 
     </section>
-    <section>
-      <div>
-        <img src="" alt="">
-        <h2>Rechercher</h2>
-      </div>
-      <form action="">
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-      </form>
-    </section>
+
+    <VehiclesFilter/>
+
   </div>
 
 
