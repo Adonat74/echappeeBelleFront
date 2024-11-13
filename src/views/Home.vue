@@ -64,44 +64,33 @@ import { ref } from 'vue'
           </div>
     </div><!--Ici se termine le #container3-->
 
-    <div id="container4">
-      <h2>VEHICULES RECENTS</h2>
-      <div id="cardContainerAcceuil">
-        <div id="cardAcceuil1" class="cardAcceuil">
-          <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-          <div class="cardFlexContainer">
-            <div class="cardFlex">
-              <h3 class="titleAcceuil">BMW 535I, NAVI, LEATHER, ABS</h3>
-              <a class="hrefButton" href="#">
-                <button class="priceButtonAcceuil">5 500&euro;</button>
-              </a>
-            </div>
+    <div class="container4">
+            <h2>VEHICULES RECENTS</h2>
+        <div class="allVehicle">
+          <div class="choiceVehicle">
+                    <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
+                          <h3 class="titleAcceuil">BMW 535I, NAVI, LEATHER, ABS</h3>
+                          <a class="hrefButton" href="#">
+                            <button class="priceButtonAcceuil">5 500&euro;</button>
+                          </a>
           </div>
-        </div>
-        <div id="cardAcceuil2" class="cardAcceuil">
-          <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-          <div class="cardFlexContainer">
-            <div class="cardFlex">
-              <h3 class="titleAcceuil">BMW 328i, SPORT LINE BODY KIT</h3>
-              <a class="hrefButton" href="#">
-                <button class="priceButtonAcceuil">8 000&euro;</button>
-              </a>
-            </div>
+
+          <div class="choiceVehicle">
+                <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
+                        <h3 class="titleAcceuil">BMW 328i, SPORT LINE BODY KIT</h3>
+                        <a class="hrefButton" href="#">
+                          <button class="priceButtonAcceuil">8 000&euro;</button>
+                        </a>
           </div>
-        </div>
-        <div id="cardAcceuil3" class="cardAcceuil">
-          <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
-          <div class="cardFlexContainer">
-            <div class="cardFlex">
-              <h3 class="titleAcceuil">FORD EXPLORER 2015 4WD</h3>
-              <a class="hrefButton" href="#">
-                <button id="priceButtonAcceuil" class="priceButtonAcceuil"><span
-                    style="color: #000000; ">9 000&euro;</span><br>8 200&euro;</button>
-              </a>
+            <div class="choiceVehicle">
+                    <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
+                          <h3 class="titleAcceuil">FORD EXPLORER 2015 4WD</h3>
+                          <a class="hrefButton" href="#">
+                            <button id="priceButtonAcceuil" class="priceButtonAcceuil"><span
+                                style="color: #000000; ">9 000&euro;</span><br>8 200&euro;</button>
+                          </a>
             </div>
-          </div>
         </div>
-      </div>
     </div><!--Ici se termine le #container4-->
     <div id="container5">
       <h2>Pourquoi nous choisir?</h2>
@@ -270,5 +259,36 @@ background-color: hsla(0, 100%, 64%, 0.82);
 }
 .textBlock{
   height: 80vh;
+}
+
+.container4{
+  background-color: #232628;
+  height: 70vh;
+}
+.container4 h2{
+  text-align: center;
+  font-size: 3em;
+  padding-top: 2%;
+ padding-bottom: 2%;
+  color: white;
+}
+.allVehicle{
+  display: flex;
+  flex-direction: row;
+}
+.choiceVehicle{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+}
+.choiceVehicle button{
+  width: 15%;
+  font-size: 0.7em;
+
+}
+.choiceVehicle img{
+  width: 90%;
 }
 </style>
