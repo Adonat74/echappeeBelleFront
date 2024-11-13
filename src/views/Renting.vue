@@ -1,6 +1,18 @@
 <script setup>
 import VehiclesFilter from "@/components/filter/VehiclesFilter.vue";
 import CarCard from "@/components/carCard/CarCard.vue";
+import { ref, onMounted } from 'vue';
+import { getVehicles } from "@/services/modules/vehiclesAPICalls.js";
+
+const vehicles = ref([]);
+
+onMounted(async () => {
+  const result = await getVehicles();
+  if (result) {
+    vehicles.value = result;
+  }
+  console.log(vehicles.value);
+});
 
 
 
