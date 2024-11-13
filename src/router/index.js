@@ -11,7 +11,7 @@ const router = createRouter({
         {path: '/', name:"home" ,component: Home},
         {path: '/renting', name:"renting" ,component: Renting},
         {path: '/car/:id', name:"car" ,component: Car},
-        {path: '/account/:id', name:"account" ,component: Account},
+        {path: '/account', name:"account" ,component: Account},
         {path: '/contact', name:"contact" ,component: Contact},
     ]
 });
