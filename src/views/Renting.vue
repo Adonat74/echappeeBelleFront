@@ -2,31 +2,67 @@
 import VehiclesFilter from "@/components/filter/VehiclesFilter.vue";
 import VehicleCard from "@/components/carCard/VehicleCard.vue";
 import { ref, onMounted } from 'vue';
-import { getVehicles } from "@/services/modules/vehiclesAPICalls.js";
+import { fetchVehicles } from "@/services/modules/vehiclesAPICalls.js";
 
 const vehicles = ref([]);
+const allVehicles = ref([]);
+const filterValues = ref(["none", "none", "none"]);
+const filterKey = ref(0);
 
-onMounted(async () => {
-  const result = await getVehicles();
+async function getVehicles() {
+  const result = await fetchVehicles();
   if (result) {
     vehicles.value = result;
+    allVehicles.value = result;
   }
   console.log(vehicles.value);
-});
+}
+onMounted(getVehicles);
 
-function sortVehicles(sortBy) {
-  if (sortBy == "priceIncrease") {
-    vehicles.value.sort((a,b) => a.pricePerKilometerInCents - b.pricePerKilometerInCents);
-  } else if (sortBy == "priceDecrease") {
-    vehicles.value.sort((a,b) => b.pricePerKilometerInCents - a.pricePerKilometerInCents);
-  } else if (sortBy == "brandAZ") {
-    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? 1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? -1 : 0))
-  } else if (sortBy == "brandZA") {
-    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? -1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? 1 : 0))
+// Enregistre les valeurs des filtre dans un tableau
+function changeFilterValues(value, filterBy) {
+  if (filterBy === "type") {
+    filterValues.value[0] = value;
+  } else if (filterBy === "brand") {
+    filterValues.value[1] = value;
+  } else if (filterBy === "model") {
+    filterValues.value[2] = value;
+  }
+  filterVehicles();
+}
+
+function resetFilter() {
+  filterValues.value = ["none", "none", "none"];
+  vehicles.value = allVehicles.value;
+  filterKey.value ++;
+}
+
+// filtre les véhicule en fonction des valeurs
+function filterVehicles() {
+  vehicles.value = allVehicles.value;
+  if (filterValues.value[0] !== "none") {
+    vehicles.value = vehicles.value.filter(vehicle => vehicle.type === filterValues.value[0]);
+  }
+  if (filterValues.value[1] !== "none") {
+    vehicles.value = vehicles.value.filter(vehicle => vehicle.brand === filterValues.value[1]);
+  }
+  if (filterValues.value[2] !== "none") {
+    vehicles.value = vehicles.value.filter(vehicle => vehicle.model === filterValues.value[2]);
   }
 }
 
-
+// trie les véhicules en fonction du prix ou de la marque
+function sortVehicles(sortBy) {
+  if (sortBy === "priceIncrease") {
+    vehicles.value.sort((a,b) => a.pricePerKilometerInCents - b.pricePerKilometerInCents);
+  } else if (sortBy === "priceDecrease") {
+    vehicles.value.sort((a,b) => b.pricePerKilometerInCents - a.pricePerKilometerInCents);
+  } else if (sortBy === "brandAZ") {
+    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? 1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? -1 : 0))
+  } else if (sortBy === "brandZA") {
+    vehicles.value.sort((a,b) => (a.brand.toLowerCase() > b.brand.toLowerCase()) ? -1 : ((b.brand.toLowerCase() > a.brand.toLowerCase()) ? 1 : 0))
+  }
+}
 
 </script>
 
@@ -52,7 +88,7 @@ function sortVehicles(sortBy) {
         </div>
       </div>
     </section>
-    <VehiclesFilter/>
+    <VehiclesFilter :key="filterKey" v-if="allVehicles.length > 0" :allVehicles="allVehicles" @change-event="changeFilterValues" @reset-filter="resetFilter"/>
   </div>
 </template>
 

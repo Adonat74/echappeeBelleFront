@@ -1,11 +1,11 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { getVehicles } from "@/services/modules/vehiclesAPICalls.js";
+import { fetchVehicles } from "@/services/modules/vehiclesAPICalls.js";
 
 const vehicles = ref([]);
 
 onMounted(async () => {
-  const result = await getVehicles();
+  const result = await fetchVehicles();
   if (result) {
     vehicles.value = result;
   }

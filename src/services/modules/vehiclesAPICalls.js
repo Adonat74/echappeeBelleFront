@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function getVehicles() {
+export async function fetchVehicles() {
     try {
         const response = await axios.get(`http://localhost:8082/vehicles`);
         console.log(response.data);

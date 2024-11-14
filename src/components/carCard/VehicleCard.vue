@@ -8,7 +8,7 @@ defineProps(['vehicle'])
     <div class="cardBody">
       <div class="titleContainer">
         <h2>{{vehicle.brand + ", " + vehicle.model + ", " + vehicle.type + ", " + vehicle.color}}</h2>
-        <p class="price">{{(vehicle.pricePerKilometerInCents/100).toFixed(2)}}€/Km</p>
+        <p class="price">{{(vehicle.bookingPriceInCents/100).toFixed(2)}}€ + {{(vehicle.pricePerKilometerInCents/100).toFixed(2)}}€/Km</p>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis voluptatem delectus error adipisci. Enim delectus odit debitis! Laudantium illum necessitatibus dolorem illo libero sed debitis iste esse vel ad.</p>
       <p>>>En savoir plus<<</p>
