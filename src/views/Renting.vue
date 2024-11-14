@@ -6,6 +6,7 @@ import { fetchVehicles } from "@/services/modules/vehiclesAPICalls.js";
 
 const vehicles = ref([]);
 const allVehicles = ref([]);
+// index 0 = type, 1 = brand 2 = model
 const filterValues = ref(["none", "none", "none"]);
 const filterKey = ref(0);
 

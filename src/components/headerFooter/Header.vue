@@ -88,7 +88,6 @@ img{
 }
 
 nav{
-  width: 100%;
   height: 100%;
   margin-left: 60%;
   display: flex;
