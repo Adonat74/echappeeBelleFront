@@ -3,7 +3,7 @@ defineProps(['vehicle'])
 </script>
 
 <template>
-  <div class="vehicleCard">
+  <RouterLink class="vehicleCard" :to="`/vehicle/${vehicle.idVehicle}`">
     <img src="@/assets/images/vehicule2.jpg" alt="">
     <div class="cardBody">
       <div class="titleContainer">
@@ -13,7 +13,7 @@ defineProps(['vehicle'])
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis voluptatem delectus error adipisci. Enim delectus odit debitis! Laudantium illum necessitatibus dolorem illo libero sed debitis iste esse vel ad.</p>
       <p>>>En savoir plus<<</p>
     </div>
-  </div>
+  </RouterLink>
 
 
 
