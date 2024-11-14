@@ -124,5 +124,22 @@ select{
   margin-top: 50px;
   width: 100%;
   border-top: 1px solid #9e9e9e;
+  max-height:1000px;
+  overflow-y: scroll;
+  padding: 0 30px;
+}
+.vehiclesList::-webkit-scrollbar {
+  width: 10px; /* Set the width for the vertical scrollbar */
+}
+.vehiclesList::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 10px; /* Optionally round the corners of the track */
+}
+.vehiclesList::-webkit-scrollbar-thumb {
+  background: #9fbae1; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Optionally round the corners of the thumb */
+}
+.vehiclesList::-webkit-scrollbar-thumb:hover {
+  background: var(--blue); /* Color of the scrollbar thumb when hovered */
 }
 </style>
