@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted} from 'vue';
 import {getUsers} from "@/services/modules/vehiclesAPICalls.js";
+import {deleteUserById} from "@/services/modules/vehiclesAPICalls.js";
 
 const users = ref([]);
 
@@ -16,8 +17,8 @@ onMounted(async () => {
 
 <template>
 
-  <h1>Page Admin</h1>
-
+  <h1>Page Admin Users</h1>
+<router-link to="/admin"><button id="backButton">Back</button></router-link>
   <table class="table">
     <thead>
     <tr>
@@ -43,13 +44,16 @@ onMounted(async () => {
       <td>{{user.password}}</td>
       <td>{{user.licenseNumber}}</td>
       <td>{{user.licenseObtentionDate}}</td>
-      <td><button></button></td>
-      <td><button></button></td>
+
+      <RouterLink :to="'/users/' + user.id">
+        <button type="button" id="buttonUpdate" class="btn btn-primary">Modifier</button>
+      </RouterLink>
+
+      <td><button @click="deleteUserById(user.id)" type="button" id="buttondelete" class="btn btn-danger">Supprimer</button></td>
     </tr>
+    <RouterLink to="/create"><button id="buttonCreate">Créer</button></RouterLink>
     </tbody>
   </table>
-
-
 </template>
 
 <style scoped>
@@ -64,5 +68,33 @@ h1{
 table{
   position: relative;
   top: 10vh;
+}
+#buttonCreate{
+  position: absolute;
+  left: 90vh;
+  top: 25vh;
+  color: white;
+  background-color: #FAB637;
+ border: none;
+  border-radius: 10px;
+  width: 5vw;
+}
+#buttonUpdate{
+  position: relative;
+top: 0.8vh;
+  left: 1vw;
+}
+#buttondelete{
+  position: relative;
+  left: -30vh;
+}
+#backButton{
+  position: relative;
+  left: 5vw;
+  background-color:grey;
+  border: none;
+  border-radius: 10px;
+  width: 4vw;
+  height: 2vw;
 }
 </style>
