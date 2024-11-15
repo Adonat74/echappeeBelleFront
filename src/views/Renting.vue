@@ -7,18 +7,23 @@ import { fetchVehicles } from "@/services/modules/vehiclesAPICalls.js";
 const vehicles = ref([]);
 const allVehicles = ref([]);
 // index 0 = type, 1 = brand 2 = model
-const filterValues = ref(["none", "none", "none"]);
+const filterValues = ref(["", "", ""]);
 const filterKey = ref(0);
 
+// Séparer 2 fonctions pour éviter de mettre à jour la variable AllVehicles et causer des problèmes au filtre
 async function getVehicles() {
-  const result = await fetchVehicles();
+  const result = await fetchVehicles(filterValues.value[0], filterValues.value[1], filterValues.value[2]);
+  if (result) {
+    vehicles.value = result;
+  }
+}
+async function getVehiclesMounted() {
+  const result = await fetchVehicles(filterValues.value[0], filterValues.value[1], filterValues.value[2]);
   if (result) {
     vehicles.value = result;
     allVehicles.value = result;
   }
-  console.log(vehicles.value);
 }
-onMounted(getVehicles);
 
 // Enregistre les valeurs des filtre dans un tableau
 function changeFilterValues(value, filterBy) {
@@ -29,28 +34,29 @@ function changeFilterValues(value, filterBy) {
   } else if (filterBy === "model") {
     filterValues.value[2] = value;
   }
-  filterVehicles();
+  getVehicles();
+  //filterVehicles();
 }
 
 function resetFilter() {
-  filterValues.value = ["none", "none", "none"];
+  filterValues.value = ["", "", ""];
   vehicles.value = allVehicles.value;
   filterKey.value ++;
 }
 
 // filtre les véhicule en fonction des valeurs
-function filterVehicles() {
-  vehicles.value = allVehicles.value;
-  if (filterValues.value[0] !== "none") {
-    vehicles.value = vehicles.value.filter(vehicle => vehicle.type === filterValues.value[0]);
-  }
-  if (filterValues.value[1] !== "none") {
-    vehicles.value = vehicles.value.filter(vehicle => vehicle.brand === filterValues.value[1]);
-  }
-  if (filterValues.value[2] !== "none") {
-    vehicles.value = vehicles.value.filter(vehicle => vehicle.model === filterValues.value[2]);
-  }
-}
+// function filterVehicles() {
+//   vehicles.value = allVehicles.value;
+//   if (filterValues.value[0] !== "") {
+//     vehicles.value = vehicles.value.filter(vehicle => vehicle.type === filterValues.value[0]);
+//   }
+//   if (filterValues.value[1] !== "") {
+//     vehicles.value = vehicles.value.filter(vehicle => vehicle.brand === filterValues.value[1]);
+//   }
+//   if (filterValues.value[2] !== "") {
+//     vehicles.value = vehicles.value.filter(vehicle => vehicle.model === filterValues.value[2]);
+//   }
+// }
 
 // trie les véhicules en fonction du prix ou de la marque
 function sortVehicles(sortBy) {
@@ -65,6 +71,7 @@ function sortVehicles(sortBy) {
   }
 }
 
+onMounted(getVehiclesMounted);
 </script>
 
 <template>
@@ -92,6 +99,8 @@ function sortVehicles(sortBy) {
     <VehiclesFilter :key="filterKey" v-if="allVehicles.length > 0" :allVehicles="allVehicles" @change-event="changeFilterValues" @reset-filter="resetFilter"/>
   </div>
 </template>
+
+
 
 <style scoped>
 .mainHeader {

@@ -1,12 +1,14 @@
 <script setup>
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 
 defineEmits(['changeEvent', 'resetFilter']);
-const props = defineProps(['allVehicles'])
+const props = defineProps(['allVehicles']);
+
 
 const types = ref([]);
 const brands = ref([]);
 const models = ref([]);
+
 
 // liste les type, brand et model pour ajouter dynamiquement des options dans les selects
 function listBrandsAndModels() {
@@ -22,9 +24,10 @@ function listBrandsAndModels() {
     }
   }
 }
+
+
+
 onMounted(listBrandsAndModels);
-
-
 </script>
 
 <template>
@@ -36,19 +39,19 @@ onMounted(listBrandsAndModels);
     <form v-on:submit.prevent="onSubmit">
       <select name="type" id="type" @change="$emit('changeEvent', $event.target.value, 'type')">
         <option value="" disabled selected>Type</option>
-        <option value="none">Tout</option>
+        <option value="">Tout</option>
         <option v-for="type in types" :value="type">{{ type }}</option>
       </select>
 
       <select name="brand" id="brand" @change="$emit('changeEvent', $event.target.value, 'brand')">
         <option value="" disabled selected>Marque</option>
-        <option value="none">Tout</option>
+        <option value="">Tout</option>
         <option v-for="brand in brands" :value="brand">{{ brand }}</option>
       </select>
 
       <select name="model" id="model" @change="$emit('changeEvent', $event.target.value, 'model')">
         <option value="" disabled selected>Modèle</option>
-        <option value="none">Tout</option>
+        <option value="">Tout</option>
         <option v-for="model in models" :value="model">{{ model }}</option>
       </select>
       <button @click="$emit('resetFilter')">Réinitialiser</button>
