@@ -14,9 +14,6 @@ defineProps(['vehicle'])
       <p>>>En savoir plus<<</p>
     </div>
   </RouterLink>
-
-
-
 </template>
 
 <style scoped>

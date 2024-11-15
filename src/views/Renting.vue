@@ -132,7 +132,7 @@ select{
 }
 .vehiclesList{
   margin-top: 50px;
-  width: 100%;
+  min-width: 60vw;
   border-top: 1px solid #9e9e9e;
   max-height:1000px;
   overflow-y: scroll;
