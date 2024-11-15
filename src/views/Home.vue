@@ -80,7 +80,7 @@ onMounted(async () => {
           <div class="choiceVehicle" v-for = "(vehicle, index) in vehicles.slice(0,3)" :key="index">
                     <img class="imageProduitAcceuil" src="../assets/images/vehicule2.jpg" alt="Véhicule">
                           <h3 class="titleAcceuil">{{vehicle.brand}} {{vehicle.model}}<br>{{vehicle.plateNumber}}<br>Taxes Horses {{vehicle.taxHorses}}</h3>
-                          <a class="hrefButton" href="#"><button class="priceButtonAcceuil">{{(vehicle.pricePerKilometerInCents/100).toFixed(2)}}€/km</button></a>
+                          <RouterLink to="/renting" class="hrefButton" href="#"><button class="priceButtonAcceuil">{{(vehicle.pricePerKilometerInCents/100).toFixed(2)}}€/km</button></RouterLink>
           </div>
         </div>
     </div>
