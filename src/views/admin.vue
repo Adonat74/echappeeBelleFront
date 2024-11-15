@@ -43,6 +43,8 @@ onMounted(async () => {
       <td>{{user.password}}</td>
       <td>{{user.licenseNumber}}</td>
       <td>{{user.licenseObtentionDate}}</td>
+      <td><button></button></td>
+      <td><button></button></td>
     </tr>
     </tbody>
   </table>
